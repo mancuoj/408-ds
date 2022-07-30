@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "ds.h"
+#include <gtest/gtest.h>
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
@@ -10,9 +10,9 @@ int main(int argc, char **argv) {
 TEST(Test09, BF) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     List9 list = create_list9(data);
-    EXPECT_EQ(search_k_bf(list, 1), 1);     // 10
-    EXPECT_EQ(search_k_bf(list, 5), 1);     // 6
-    EXPECT_EQ(search_k_bf(list, 10), 1);    // 1
+    EXPECT_EQ(search_k_bf(list, 1), 1);  // 10
+    EXPECT_EQ(search_k_bf(list, 5), 1);  // 6
+    EXPECT_EQ(search_k_bf(list, 10), 1); // 1
 
     EXPECT_EQ(search_k_bf(list, 12), 0);
     EXPECT_EQ(search_k_bf(list, 20), 0);
@@ -21,14 +21,13 @@ TEST(Test09, BF) {
 TEST(Test09, OP) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     List9 list = create_list9(data);
-    EXPECT_EQ(search_k(list, 1), 1);        // 10
-    EXPECT_EQ(search_k(list, 3), 1);        // 8
-    EXPECT_EQ(search_k(list, 9), 1);        // 2
+    EXPECT_EQ(search_k(list, 1), 1); // 10
+    EXPECT_EQ(search_k(list, 3), 1); // 8
+    EXPECT_EQ(search_k(list, 9), 1); // 2
 
     EXPECT_EQ(search_k(list, 11), 0);
     EXPECT_EQ(search_k(list, 12), 0);
 }
-
 
 /******************** 10 ********************/
 /******************** 11 ********************/
@@ -50,6 +49,7 @@ TEST(Test12, BF) {
     pa->next = pc;
     pb->next = pc;
 
+    // TODO: Add more test cases
     EXPECT_EQ(find_common_bf(la, lb), pc);
     EXPECT_EQ(find_common_bf(lb, la), pc);
 }
@@ -71,10 +71,10 @@ TEST(Test12, OP) {
     pa->next = pc;
     pb->next = pc;
 
+    // TODO: Add more test cases
     EXPECT_EQ(find_common(la, lb), pc);
     EXPECT_EQ(find_common(lb, la), pc);
 }
-
 
 /******************** 13 ********************/
 /******************** 14 ********************/

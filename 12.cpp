@@ -8,12 +8,12 @@ List12 create_list12(const std::vector<char> &data) {
         return NULL;
     }
 
-    auto *head = (Node12 *) malloc(sizeof(Node12));
+    auto *head = (Node12 *)malloc(sizeof(Node12));
     head->next = NULL;
 
     Node12 *p = head;
-    for (char c: data) {
-        auto *cur = (Node12 *) malloc(sizeof(Node12));
+    for (char c : data) {
+        auto *cur = (Node12 *)malloc(sizeof(Node12));
         cur->data = c;
         cur->next = NULL;
         p->next = cur;
@@ -53,7 +53,6 @@ Node12 *find_common_bf(List12 A, List12 B) {
     }
     return NULL;
 }
-
 
 /**
  * 最优解：获取两个链表的长度，右对齐，然后同时扫描，找到第一个共同点
