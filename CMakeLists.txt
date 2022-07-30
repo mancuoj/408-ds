@@ -19,6 +19,10 @@ add_executable(
         test_ds
         test_ds.cpp
         09.cpp
+        10.cpp
+        12.cpp
+        15.cpp
+        19.cpp
 )
 target_link_libraries(
         test_ds
