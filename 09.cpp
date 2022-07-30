@@ -3,17 +3,17 @@
 /**
  * 创建一个带有头节点的链表并返回
  */
-List9 create_llist(const std::vector<ElemType> &data) {
+List9 create_list9(const std::vector<ElemType> &data) {
     if (data.empty()) {
         return NULL;
     }
 
-    Node9 *head = (Node9 *) malloc(sizeof(Node9));
+    auto *head = (Node9 *) malloc(sizeof(Node9));
     head->link = NULL;
 
     Node9 *p = head;
     for (ElemType i: data) {
-        Node9 *cur = (Node9 *) malloc(sizeof(Node9));
+        auto *cur = (Node9 *) malloc(sizeof(Node9));
         cur->data = i;
         cur->link = NULL;
         p->link = cur;

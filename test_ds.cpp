@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 /******************** 09 ********************/
 TEST(Test09, BF) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    List9 list = create_llist(data);
+    List9 list = create_list9(data);
     EXPECT_EQ(search_k_bf(list, 1), 1);     // 10
     EXPECT_EQ(search_k_bf(list, 5), 1);     // 6
     EXPECT_EQ(search_k_bf(list, 10), 1);    // 1
@@ -20,7 +20,7 @@ TEST(Test09, BF) {
 
 TEST(Test09, OP) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    List9 list = create_llist(data);
+    List9 list = create_list9(data);
     EXPECT_EQ(search_k(list, 1), 1);        // 10
     EXPECT_EQ(search_k(list, 3), 1);        // 8
     EXPECT_EQ(search_k(list, 9), 1);        // 2
@@ -34,11 +34,45 @@ TEST(Test09, OP) {
 /******************** 11 ********************/
 /******************** 12 ********************/
 TEST(Test12, BF) {
+    std::vector<char> dataA{'l', 'o', 'a', 'd'};
+    std::vector<char> dataB{'b', 'e'};
+    std::vector<char> dataC{'i', 'n', 'g'};
+    List12 la = create_list12(dataA);
+    List12 lb = create_list12(dataB);
+    List12 lc = create_list12(dataC);
+    Node12 *pa = la->next, *pb = lb->next, *pc = lc->next;
+    while (pa->next != NULL) {
+        pa = pa->next;
+    }
+    while (pb->next != NULL) {
+        pb = pb->next;
+    }
+    pa->next = pc;
+    pb->next = pc;
 
+    EXPECT_EQ(find_common_bf(la, lb), pc);
+    EXPECT_EQ(find_common_bf(lb, la), pc);
 }
 
 TEST(Test12, OP) {
+    std::vector<char> dataA{'l', 'o', 'a', 'd'};
+    std::vector<char> dataB{'b', 'e'};
+    std::vector<char> dataC{'i', 'n', 'g'};
+    List12 la = create_list12(dataA);
+    List12 lb = create_list12(dataB);
+    List12 lc = create_list12(dataC);
+    Node12 *pa = la->next, *pb = lb->next, *pc = lc->next;
+    while (pa->next != NULL) {
+        pa = pa->next;
+    }
+    while (pb->next != NULL) {
+        pb = pb->next;
+    }
+    pa->next = pc;
+    pb->next = pc;
 
+    EXPECT_EQ(find_common(la, lb), pc);
+    EXPECT_EQ(find_common(lb, la), pc);
 }
 
 
