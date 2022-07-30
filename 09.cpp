@@ -23,7 +23,7 @@ List9 create_list9(const std::vector<ElemType> &data) {
     return head;
 }
 
-/*
+/**
  * bf（Brute Force），即暴力解
  * 首先扫描一次求出链表长度len，然后重新向后扫描len-k个结点即可
  */
@@ -47,7 +47,7 @@ int search_k_bf(List9 list, int k) {
     return 1;
 }
 
-/*
+/**
  * 最优解不一定是真正的最优，只是符合评判标准中的满分
  * 双指针，一指针先走k步，然后双指针同步，直到前者走到终点，后一指针所在位置即倒数第k个结点
  */

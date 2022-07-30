@@ -23,6 +23,9 @@ List12 create_list12(const std::vector<char> &data) {
     return head;
 }
 
+/**
+ * 获取链表长度并返回
+ */
 int get_len(List12 list) {
     int len = 0;
     while (list->next != NULL) {
@@ -32,7 +35,7 @@ int get_len(List12 list) {
     return len;
 }
 
-/*
+/**
  * 暴力解：双重循环，扫描A链表的同时对比B链表所有的结点，找到第一个共同点
  */
 Node12 *find_common_bf(List12 A, List12 B) {
@@ -52,7 +55,7 @@ Node12 *find_common_bf(List12 A, List12 B) {
 }
 
 
-/*
+/**
  * 最优解：获取两个链表的长度，右对齐，然后同时扫描，找到第一个共同点
  */
 Node12 *find_common(List12 A, List12 B) {
