@@ -49,7 +49,7 @@ int search_k_bf(List9 list, int k) {
 
 /**
  * 最优解不一定是真正的最优，只是符合评判标准中的满分
- * 双指针，一指针先走k步，然后双指针同步，直到前者走到终点，后一指针所在位置即倒数第k个结点
+ * 双指针，一指针先走k步，然后双指针同步走，直到前者走到终点，后一指针所在位置即倒数第k个结点
  */
 int search_k(List9 list, int k) {
     Node9 *p1 = list->link, *p2 = list->link;
@@ -60,7 +60,6 @@ int search_k(List9 list, int k) {
         } else {
             p2 = p2->link;
         }
-
         p1 = p1->link;
     }
 
