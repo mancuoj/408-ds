@@ -49,7 +49,6 @@ TEST(Test12, BF) {
     pa->next = pc;
     pb->next = pc;
 
-    // TODO: Add more test cases
     EXPECT_EQ(find_common_bf(la, lb), pc);
     EXPECT_EQ(find_common_bf(lb, la), pc);
 }
@@ -71,7 +70,6 @@ TEST(Test12, OP) {
     pa->next = pc;
     pb->next = pc;
 
-    // TODO: Add more test cases
     EXPECT_EQ(find_common(la, lb), pc);
     EXPECT_EQ(find_common(lb, la), pc);
 }
@@ -79,6 +77,28 @@ TEST(Test12, OP) {
 /******************** 13 ********************/
 /******************** 14 ********************/
 /******************** 15 ********************/
+TEST(Test15, OP1) {
+    std::vector<int> data{21, -15, -15, -7, 15};
+    List15 list = create_list15(data);
+    delete_same_abs_value(list, 100);
+    std::string res = to_string(list->link);
+
+    EXPECT_EQ(res.compare("21 -> -15 -> -7"), 0);
+    EXPECT_NE(res.compare("21 -> 15 -> -7"), 0);
+    EXPECT_NE(res.compare("21 -> -7 "), 0);
+}
+
+TEST(Test15, OP2) {
+    std::vector<int> data{1, -1, 1, -4, -1, -9, 4, -9, 9};
+    List15 list = create_list15(data);
+    delete_same_abs_value(list, 100);
+    std::string res = to_string(list->link);
+
+    EXPECT_EQ(res.compare("1 -> -4 -> -9"), 0);
+    EXPECT_NE(res.compare("1 -> 4 -> -9"), 0);
+    EXPECT_NE(res.compare("1 -> 4 -> 9"), 0);
+}
+
 /******************** 16 ********************/
 /******************** 17 ********************/
 /******************** 18 ********************/

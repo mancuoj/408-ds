@@ -32,7 +32,16 @@ Node12 *find_common(List12 A, List12 B);
 
 /******************** 13 ********************/
 /******************** 14 ********************/
-/******************** 15 ********************/
+/******************** 15 单链表，模拟 ********************/
+typedef struct Node15 {
+    ElemType data;
+    struct Node15 *link;
+} Node15, *List15;
+
+List15 create_list15(const std::vector<ElemType> &data);
+std::string to_string(List15 list);
+
+void delete_same_abs_value(List15 list, int n);
 /******************** 16 ********************/
 /******************** 17 ********************/
 /******************** 18 ********************/
