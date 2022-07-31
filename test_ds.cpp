@@ -84,8 +84,6 @@ TEST(Test15, OP1) {
     std::string res = to_string(list->link);
 
     EXPECT_EQ(res.compare("21 -> -15 -> -7"), 0);
-    EXPECT_NE(res.compare("21 -> 15 -> -7"), 0);
-    EXPECT_NE(res.compare("21 -> -7 "), 0);
 }
 
 TEST(Test15, OP2) {
@@ -95,14 +93,29 @@ TEST(Test15, OP2) {
     std::string res = to_string(list->link);
 
     EXPECT_EQ(res.compare("1 -> -4 -> -9"), 0);
-    EXPECT_NE(res.compare("1 -> 4 -> -9"), 0);
-    EXPECT_NE(res.compare("1 -> 4 -> 9"), 0);
 }
 
 /******************** 16 ********************/
 /******************** 17 ********************/
 /******************** 18 ********************/
 /******************** 19 ********************/
+TEST(Test19, OP1) {
+    std::vector<int> data{1, 2, 3, 4, 5};
+    Node19 *list = create_list19(data);
+    change_list(list);
+    std::string res = to_string(list->next);
+
+    EXPECT_EQ(res.compare("1 -> 5 -> 2 -> 4 -> 3"), 0);
+}
+
+TEST(Test19, OP2) {
+    std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    Node19 *list = create_list19(data);
+    change_list(list);
+    std::string res = to_string(list->next);
+
+    EXPECT_EQ(res.compare("1 -> 10 -> 2 -> 9 -> 3 -> 8 -> 4 -> 7 -> 5 -> 6"), 0);
+}
 /******************** 20 ********************/
 /******************** 21 ********************/
 /******************** 22 ********************/

@@ -42,10 +42,20 @@ List15 create_list15(const std::vector<ElemType> &data);
 std::string to_string(List15 list);
 
 void delete_same_abs_value(List15 list, int n);
+
 /******************** 16 ********************/
 /******************** 17 ********************/
 /******************** 18 ********************/
 /******************** 19 ********************/
+typedef struct Node19 {
+    int data;
+    struct Node19 *next;
+} Node19;
+
+Node19 *create_list19(const std::vector<int> &data);
+std::string to_string(Node19 *list);
+
+void change_list(Node19 *list);
 /******************** 20 ********************/
 /******************** 21 ********************/
 /******************** 22 ********************/
