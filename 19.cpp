@@ -24,7 +24,7 @@ Node19 *create_list19(const std::vector<int> &data) {
 }
 
 /**
- * 遍历含头结点链表值，返回如“1 -> 2 -> 3”的字符串
+ * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串
  */
 std::string to_string(Node19 *list) {
     return list->next == NULL ? std::to_string(list->data) : std::to_string(list->data) + " -> " + to_string(list->next);
