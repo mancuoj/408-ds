@@ -21,6 +21,7 @@ TEST(Test09, BF) {
 TEST(Test09, OP) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     List9 list = create_list9(data);
+
     EXPECT_EQ(search_k(list, 1), 1); // 10
     EXPECT_EQ(search_k(list, 3), 1); // 8
     EXPECT_EQ(search_k(list, 9), 1); // 2
@@ -30,6 +31,48 @@ TEST(Test09, OP) {
 }
 
 /******************** 10 ********************/
+TEST(Test10, BF1) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_bf(arr, 2, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "3 4 5 6 7 8 9 10 1 2");
+}
+
+TEST(Test10, BF2) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_bf(arr, 5, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "6 7 8 9 10 1 2 3 4 5");
+}
+
+TEST(Test10, BF3) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_bf(arr, 7, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "8 9 10 1 2 3 4 5 6 7");
+}
+
+TEST(Test10, OP1) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_all(arr, 2, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "3 4 5 6 7 8 9 10 1 2");
+}
+
+TEST(Test10, OP2) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_all(arr, 5, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "6 7 8 9 10 1 2 3 4 5");
+}
+
+TEST(Test10, OP3) {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    reverse_all(arr, 7, 10);
+
+    EXPECT_EQ(print_array(arr, 10), "8 9 10 1 2 3 4 5 6 7");
+}
+
 /******************** 11 ********************/
 /******************** 12 ********************/
 TEST(Test12, BF) {
@@ -78,6 +121,15 @@ TEST(Test12, OP) {
 /******************** 14 ********************/
 /******************** 15 ********************/
 TEST(Test15, OP1) {
+    std::vector<int> data{1, 2, 3};
+    List15 list = create_list15(data);
+    delete_same_abs_value(list, 100);
+    std::string res = to_string(list->link);
+
+    EXPECT_EQ(res.compare("1 -> 2 -> 3"), 0);
+}
+
+TEST(Test15, OP2) {
     std::vector<int> data{21, -15, -15, -7, 15};
     List15 list = create_list15(data);
     delete_same_abs_value(list, 100);
@@ -86,7 +138,7 @@ TEST(Test15, OP1) {
     EXPECT_EQ(res.compare("21 -> -15 -> -7"), 0);
 }
 
-TEST(Test15, OP2) {
+TEST(Test15, OP3) {
     std::vector<int> data{1, -1, 1, -4, -1, -9, 4, -9, 9};
     List15 list = create_list15(data);
     delete_same_abs_value(list, 100);
@@ -100,6 +152,15 @@ TEST(Test15, OP2) {
 /******************** 18 ********************/
 /******************** 19 ********************/
 TEST(Test19, OP1) {
+    std::vector<int> data{1, 2};
+    Node19 *list = create_list19(data);
+    change_list(list);
+    std::string res = to_string(list->next);
+
+    EXPECT_EQ(res.compare("1 -> 2"), 0);
+}
+
+TEST(Test19, OP2) {
     std::vector<int> data{1, 2, 3, 4, 5};
     Node19 *list = create_list19(data);
     change_list(list);
@@ -108,7 +169,7 @@ TEST(Test19, OP1) {
     EXPECT_EQ(res.compare("1 -> 5 -> 2 -> 4 -> 3"), 0);
 }
 
-TEST(Test19, OP2) {
+TEST(Test19, OP3) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     Node19 *list = create_list19(data);
     change_list(list);

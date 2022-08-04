@@ -17,6 +17,11 @@ int search_k_bf(List9 list, int k);
 int search_k(List9 list, int k);
 
 /******************** 10 ********************/
+std::string print_array(int arr[], int n);
+
+void reverse_bf(int R[], int p, int n);
+void reverse(int R[], int l, int r);
+void reverse_all(int R[], int p, int n);
 /******************** 11 ********************/
 /******************** 12 ********************/
 typedef struct Node12 {
