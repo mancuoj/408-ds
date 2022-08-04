@@ -20,9 +20,16 @@ add_executable(
         test_ds.cpp
         09.cpp
         10.cpp
+        11.cpp
         12.cpp
+        13.cpp
+        14.cpp
         15.cpp
+        16.cpp
+        17.cpp
+        18.cpp
         19.cpp
+        20.cpp
 )
 target_link_libraries(
         test_ds
