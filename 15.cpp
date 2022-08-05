@@ -36,7 +36,10 @@ std::string to_string(List15 list) {
  * 扫描链表各个结点，辅助数组记录结点绝对值是否出现过，如果出现过就删除该结点
  */
 void delete_same_abs_value(List15 list, int n) {
-    int arr[n + 1] = {0};
+    int *arr = (int *) malloc(sizeof(int) * (n + 1));
+    for (int i = 0; i < n + 1; i++) {
+        arr[i] = 0;
+    }
 
     Node15 *p = list, *del;
     while (p->link != NULL) {
