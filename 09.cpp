@@ -8,12 +8,12 @@ List9 create_list9(const std::vector<ElemType> &data) {
         return NULL;
     }
 
-    auto *head = (Node9 *)malloc(sizeof(Node9));
+    auto *head = (Node9 *) malloc(sizeof(Node9));
     head->link = NULL;
 
     Node9 *p = head;
-    for (ElemType i : data) {
-        auto *cur = (Node9 *)malloc(sizeof(Node9));
+    for (ElemType i: data) {
+        auto *cur = (Node9 *) malloc(sizeof(Node9));
         cur->data = i;
         cur->link = NULL;
         p->link = cur;

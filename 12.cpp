@@ -8,12 +8,12 @@ List12 create_list12(const std::vector<char> &data) {
         return NULL;
     }
 
-    auto *head = (Node12 *)malloc(sizeof(Node12));
+    auto *head = (Node12 *) malloc(sizeof(Node12));
     head->next = NULL;
 
     Node12 *p = head;
-    for (char c : data) {
-        auto *cur = (Node12 *)malloc(sizeof(Node12));
+    for (char c: data) {
+        auto *cur = (Node12 *) malloc(sizeof(Node12));
         cur->data = c;
         cur->next = NULL;
         p->next = cur;

@@ -8,12 +8,12 @@ Node19 *create_list19(const std::vector<int> &data) {
         return NULL;
     }
 
-    auto *head = (Node19 *)malloc(sizeof(Node19));
+    auto *head = (Node19 *) malloc(sizeof(Node19));
     head->next = NULL;
 
     Node19 *p = head;
-    for (int i : data) {
-        auto *cur = (Node19 *)malloc(sizeof(Node19));
+    for (int i: data) {
+        auto *cur = (Node19 *) malloc(sizeof(Node19));
         cur->data = i;
         cur->next = NULL;
         p->next = cur;
@@ -27,7 +27,9 @@ Node19 *create_list19(const std::vector<int> &data) {
  * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串
  */
 std::string to_string(Node19 *list) {
-    return list->next == NULL ? std::to_string(list->data) : std::to_string(list->data) + " -> " + to_string(list->next);
+    return list->next == NULL ?
+           std::to_string(list->data) :
+           std::to_string(list->data) + " -> " + to_string(list->next);
 }
 
 /**

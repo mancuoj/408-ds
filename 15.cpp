@@ -8,12 +8,12 @@ List15 create_list15(const std::vector<ElemType> &data) {
         return NULL;
     }
 
-    auto *head = (Node15 *)malloc(sizeof(Node15));
+    auto *head = (Node15 *) malloc(sizeof(Node15));
     head->link = NULL;
 
     Node15 *p = head;
-    for (ElemType i : data) {
-        auto *cur = (Node15 *)malloc(sizeof(Node15));
+    for (ElemType i: data) {
+        auto *cur = (Node15 *) malloc(sizeof(Node15));
         cur->data = i;
         cur->link = NULL;
         p->link = cur;
@@ -27,7 +27,8 @@ List15 create_list15(const std::vector<ElemType> &data) {
  * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串
  */
 std::string to_string(List15 list) {
-    return list->link == NULL ? std::to_string(list->data) : std::to_string(list->data) + " -> " + to_string(list->link);
+    return list->link == NULL ? std::to_string(list->data) : std::to_string(list->data) + " -> " +
+                                                             to_string(list->link);
 }
 
 /**
