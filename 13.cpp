@@ -1,13 +1,11 @@
 #include "ds.h"
 
 /**
- * 暴力解：空间换时间，计数排序思想，记录每一个数字的出现次数然后判断
+ * 暴力解：空间换时间，开一个新数组，记录每一个数字的出现次数然后判断
  */
 int find_main_bf(int A[], int len) {
     int *tmp = (int *) malloc(sizeof(int) * len);
-    for (int i = 0; i < len; i++) {
-        tmp[i] = 0;
-    }
+    memset(tmp, 0, sizeof(int) * len);
 
     for (int i = 0; i < len; i++) {
         tmp[A[i]]++;

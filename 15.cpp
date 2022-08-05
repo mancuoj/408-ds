@@ -27,19 +27,18 @@ List15 create_list15(const std::vector<ElemType> &data) {
  * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串
  */
 std::string to_string(List15 list) {
-    return list->link == NULL ? std::to_string(list->data) : std::to_string(list->data) + " -> " +
-                                                             to_string(list->link);
+    return list->link == NULL ?
+           std::to_string(list->data) :
+           std::to_string(list->data) + " -> " + to_string(list->link);
 }
 
 /**
- * 题目仅要求时间上高效，言下之意就是来个辅助数组，此题不分暴力和最优解
- * 扫描链表各个结点，辅助数组记录结点绝对值是否出现过，如果出现过就删除该结点
+ * 题目仅要求时间上高效，空间换时间
+ * 扫描链表各个结点，开个新数组，记录结点绝对值是否出现过，如果出现过就删除该结点
  */
-void delete_same_abs_value(List15 list, int n) {
-    int *arr = (int *) malloc(sizeof(int) * (n + 1));
-    for (int i = 0; i < n + 1; i++) {
-        arr[i] = 0;
-    }
+void delete_same_abs_value(List15 list, int len) {
+    int *arr = (int *) malloc(sizeof(int) * (len + 1));
+    memset(arr, 0, sizeof(int) * len + 1)
 
     Node15 *p = list, *del;
     while (p->link != NULL) {
