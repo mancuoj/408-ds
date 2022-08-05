@@ -48,6 +48,11 @@ Node12 *find_common(List12 A, List12 B);
 
 
 /******************** 13 ********************/
+int find_main_bf(int A[], int len);
+
+int find_main(int A[], int len);
+
+
 /******************** 14 ********************/
 /******************** 15 ********************/
 typedef struct Node15 {

@@ -143,6 +143,43 @@ TEST(Test12, OP) {
 
 
 /******************** 13 ********************/
+TEST(Test13, BF1) {
+    int A[] = {0, 5, 5, 3, 5, 7, 5, 5};
+
+    EXPECT_EQ(find_main_bf(A, 8), 5);
+}
+
+TEST(Test13, BF2) {
+    int A[] = {0, 5, 5, 3, 5, 1, 5, 7};
+
+    EXPECT_EQ(find_main_bf(A, 8), -1);
+}
+
+TEST(Test13, BF3) {
+    int A[] = {0, 1, 2, 3, 1, 1};
+
+    EXPECT_EQ(find_main_bf(A, 6), -1);
+}
+
+TEST(Test13, OP1) {
+    int A[] = {0, 5, 5, 3, 5, 7, 5, 5};
+
+    EXPECT_EQ(find_main(A, 8), 5);
+}
+
+TEST(Test13, OP2) {
+    int A[] = {0, 5, 5, 3, 5, 1, 5, 7};
+
+    EXPECT_EQ(find_main(A, 8), -1);
+}
+
+TEST(Test13, OP3) {
+    int A[] = {0, 1, 2, 3, 1, 1};
+
+    EXPECT_EQ(find_main(A, 6), -1);
+}
+
+
 /******************** 14 ********************/
 /******************** 15 ********************/
 TEST(Test15, OP1) {
