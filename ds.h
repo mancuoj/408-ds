@@ -87,6 +87,14 @@ void change_list(Node19 *list);
 
 
 /******************** 20 ********************/
+int find_min_distance_bf(int A[], int B[], int C[], int lena, int lenb, int lenc);
+
+bool is_min_triple(int a, int b, int c);
+
+int find_min_distance(int A[], int B[], int C[], int lena, int lenb, int lenc);
+
+
+
 /******************** 21 ********************/
 /******************** 22 ********************/
 #endif
