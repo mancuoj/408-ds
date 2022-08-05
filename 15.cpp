@@ -38,7 +38,7 @@ std::string to_string(List15 list) {
  */
 void delete_same_abs_value(List15 list, int len) {
     int *arr = (int *) malloc(sizeof(int) * (len + 1));
-    memset(arr, 0, sizeof(int) * len + 1)
+    memset(arr, 0, sizeof(int) * len + 1);
 
     Node15 *p = list, *del;
     while (p->link != NULL) {

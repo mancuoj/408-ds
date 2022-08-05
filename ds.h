@@ -64,12 +64,15 @@ List15 create_list15(const std::vector<ElemType> &data);
 
 std::string to_string(List15 list);
 
-void delete_same_abs_value(List15 list, int n);
+void delete_same_abs_value(List15 list, int len);
 
 
 /******************** 16 ********************/
 /******************** 17 ********************/
 /******************** 18 ********************/
+int find_miss_min(int A[], int len);
+
+
 /******************** 19 ********************/
 typedef struct Node19 {
     int data;
