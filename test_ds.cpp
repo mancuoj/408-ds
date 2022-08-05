@@ -76,6 +76,28 @@ TEST(Test10, OP3) {
 
 
 /******************** 11 ********************/
+TEST(Test11, OP1) {
+    int arr1[] = {11, 13, 15, 17, 19};
+    int arr2[] = {2, 4, 6, 8, 20};
+
+    EXPECT_EQ(find_mid(arr1, arr2, 5), 11);
+}
+
+TEST(Test11, OP2) {
+    int arr1[] = {1, 2, 3};
+    int arr2[] = {6, 7, 8};
+
+    EXPECT_EQ(find_mid(arr1, arr2, 3), 3);
+}
+
+TEST(Test11, OP3) {
+    int arr1[] = {10};
+    int arr2[] = {5};
+
+    EXPECT_EQ(find_mid(arr1, arr2, 1), 5);
+}
+
+
 /******************** 12 ********************/
 TEST(Test12, BF) {
     std::vector<char> dataA{'l', 'o', 'a', 'd'};

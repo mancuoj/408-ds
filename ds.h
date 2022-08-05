@@ -29,6 +29,9 @@ void reverse_all(int R[], int p, int n);
 
 
 /******************** 11 ********************/
+int find_mid(int A[], int B[], int len);
+
+
 /******************** 12 ********************/
 typedef struct Node12 {
     char data;
