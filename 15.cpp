@@ -24,7 +24,7 @@ List15 create_list15(const std::vector<ElemType> &data) {
 }
 
 /**
- * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串
+ * 遍历链表结点值，返回如“1 -> 2 -> 3”的字符串，不接受空链表
  */
 std::string to_string(List15 list) {
     return list->link == NULL ?
