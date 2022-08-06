@@ -54,6 +54,9 @@ int find_main(int A[], int len);
 
 
 /******************** 14 ********************/
+
+
+
 /******************** 15 ********************/
 typedef struct Node15 {
     ElemType data;
@@ -73,6 +76,9 @@ int partition(int A[], int len);
 
 
 /******************** 17 ********************/
+
+
+
 /******************** 18 ********************/
 int find_miss_min(int A[], int len);
 
@@ -100,5 +106,20 @@ int find_min_distance(int A[], int B[], int C[], int lena, int lenb, int lenc);
 
 
 /******************** 21 ********************/
+#define MAXV 100
+
+typedef struct {
+    int numVertices, numEdges;  // 图中实际顶点数和边数
+    char VerticesList[MAXV];    // 顶点表
+    int Edge[MAXV][MAXV];       // 邻接矩阵
+} MGraph;
+
+int is_exist_EL(MGraph G);
+
+
+
 /******************** 22 ********************/
+
+
+
 #endif

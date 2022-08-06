@@ -311,4 +311,68 @@ TEST(Test20, OP) {
 
 
 /******************** 21 ********************/
+TEST(Test21, OP1) {
+    MGraph G;
+    G.numVertices = 3;
+    G.numEdges = 3;
+    G.VerticesList[0] = 'a';
+    G.VerticesList[1] = 'b';
+    G.VerticesList[2] = 'c';
+    G.Edge[0][1] = 1;   // a-b
+    G.Edge[1][0] = 1;
+    G.Edge[1][2] = 1;   // b-c
+    G.Edge[2][1] = 1;
+    G.Edge[0][2] = 1;   // a-c
+    G.Edge[2][0] = 1;
+
+    // 图中顶点的度均为2，即有0个度为奇数的顶点，故EL路径存在
+    EXPECT_EQ(is_exist_EL(G), 1);
+}
+
+TEST(Test21, OP2) {
+    MGraph G;
+    G.numVertices = 4;
+    G.numEdges = 5;
+    G.VerticesList[0] = 'a';
+    G.VerticesList[1] = 'b';
+    G.VerticesList[2] = 'c';
+    G.VerticesList[3] = 'd';
+    G.Edge[0][1] = 1;   // a-b
+    G.Edge[1][0] = 1;
+    G.Edge[1][2] = 1;   // b-c
+    G.Edge[2][1] = 1;
+    G.Edge[0][2] = 1;   // a-c
+    G.Edge[2][0] = 1;
+    G.Edge[0][3] = 1;   // a-d
+    G.Edge[3][0] = 1;
+    G.Edge[1][3] = 1;   // b-d
+    G.Edge[3][1] = 1;
+
+    // 图中顶点a和b度为3，c和d的度为2，即有2个度为奇数的顶点，故EL路径存在
+    EXPECT_EQ(is_exist_EL(G), 1);
+}
+
+TEST(Test21, OP3) {
+    MGraph G;
+    G.numVertices = 5;
+    G.numEdges = 5;
+    G.VerticesList[0] = 'a';
+    G.VerticesList[1] = 'b';
+    G.VerticesList[2] = 'c';
+    G.VerticesList[3] = 'd';
+    G.VerticesList[4] = 'e';
+    G.Edge[0][1] = 1;   // a-b
+    G.Edge[1][0] = 1;
+    G.Edge[1][2] = 1;   // b-c
+    G.Edge[2][1] = 1;
+    G.Edge[0][2] = 1;   // a-c
+    G.Edge[2][0] = 1;
+    G.Edge[0][4] = 1;   // a-e
+    G.Edge[4][0] = 1;
+    G.Edge[1][3] = 1;   // b-d
+    G.Edge[3][1] = 1;
+
+    // 图中顶点a和b度为3，c的度为2，d和e的度为1，即有4个度为奇数的顶点，故EL路径不存在
+    EXPECT_EQ(is_exist_EL(G), 0);
+}
 /******************** 22 ********************/
