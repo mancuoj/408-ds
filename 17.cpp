@@ -33,10 +33,12 @@ void tree_to_infix(BTree *root, int depth) {
             // printf("(");
             str.append("(");
         }
+
         tree_to_infix(root->left, depth + 1);
         // printf("%s", root->data);
         str.append(root->data);
         tree_to_infix(root->right, depth + 1);
+
         if (depth > 1) {
             // printf(")");
             str.append(")");
