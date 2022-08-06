@@ -68,6 +68,10 @@ void delete_same_abs_value(List15 list, int len);
 
 
 /******************** 16 ********************/
+int partition(int A[], int len);
+
+
+
 /******************** 17 ********************/
 /******************** 18 ********************/
 int find_miss_min(int A[], int len);
