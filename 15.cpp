@@ -1,7 +1,7 @@
 #include "ds.h"
 
 /**
- * 创建一个带有头节点的链表并返回，与第9题一致
+ * 创建一个带有头节点的链表并返回
  */
 List15 create_list15(const std::vector<ElemType> &data) {
     if (data.empty()) {
