@@ -56,7 +56,7 @@ typedef struct BiNode {
     struct BiNode *left, *right;
 } BiNode, *BiTree;
 
-BiNode *new_node(int weight);
+BiNode *new_node_15(int weight);
 
 int WPL(BiTree root);
 
@@ -80,10 +80,17 @@ void delete_same_abs_value(List15 list, int len);
 int partition(int A[], int len);
 
 
-
 /******************** 17 ********************/
+typedef struct Node17 {
+    char data[10];
+    struct Node17 *left, *right;
+} BTree;
 
+BTree *new_node_17(char data[]);
 
+std::string T2E(BTree *root);
+
+void tree_to_infix(BTree *root, int depth);
 
 /******************** 18 ********************/
 int find_miss_min(int A[], int len);

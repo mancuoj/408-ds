@@ -11,9 +11,9 @@ TEST(Test09, BF) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     List9 list = create_list9(data);
 
-    EXPECT_EQ(search_k_bf(list, 1), 1);  // 10
-    EXPECT_EQ(search_k_bf(list, 5), 1);  // 6
-    EXPECT_EQ(search_k_bf(list, 10), 1); // 1
+    EXPECT_EQ(search_k_bf(list, 1), 1);     // 10
+    EXPECT_EQ(search_k_bf(list, 5), 1);     // 6
+    EXPECT_EQ(search_k_bf(list, 10), 1);    // 1
     EXPECT_EQ(search_k_bf(list, 12), 0);
     EXPECT_EQ(search_k_bf(list, 20), 0);
 }
@@ -22,9 +22,9 @@ TEST(Test09, OP) {
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     List9 list = create_list9(data);
 
-    EXPECT_EQ(search_k(list, 1), 1); // 10
-    EXPECT_EQ(search_k(list, 3), 1); // 8
-    EXPECT_EQ(search_k(list, 9), 1); // 2
+    EXPECT_EQ(search_k(list, 1), 1);    // 10
+    EXPECT_EQ(search_k(list, 3), 1);    // 8
+    EXPECT_EQ(search_k(list, 9), 1);    // 2
     EXPECT_EQ(search_k(list, 11), 0);
     EXPECT_EQ(search_k(list, 12), 0);
 }
@@ -186,36 +186,36 @@ TEST(Test13, OP3) {
 
 /******************** 14 ********************/
 TEST(Test14, OP1) {
-    BiNode *root = new_node(1);
-    root->left = new_node(2);
-    root->right = new_node(3);
-    root->left->left = new_node(4);
+    BiNode *root = new_node_15(1);
+    root->left = new_node_15(2);
+    root->right = new_node_15(3);
+    root->left->left = new_node_15(4);
 
     // 3+4*2=11
     EXPECT_EQ(WPL(root), 11);
 }
 
 TEST(Test14, OP2) {
-    BiNode *root = new_node(3);
-    root->left = new_node(5);
-    root->right = new_node(8);
-    root->left->left = new_node(2);
-    root->left->right = new_node(12);
-    root->left->right->left = new_node(7);
+    BiNode *root = new_node_15(3);
+    root->left = new_node_15(5);
+    root->right = new_node_15(8);
+    root->left->left = new_node_15(2);
+    root->left->right = new_node_15(12);
+    root->left->right->left = new_node_15(7);
 
     // 8+2*2+7*3=33
     EXPECT_EQ(WPL(root), 33);
 }
 
 TEST(Test14, OP3) {
-    BiNode *root = new_node(3);
-    root->left = new_node(1);
-    root->right = new_node(22);
-    root->left->right = new_node(12);
-    root->right->left = new_node(2);
-    root->left->right->left = new_node(4);
-    root->left->right->right = new_node(9);
-    root->right->left->left = new_node(5);
+    BiNode *root = new_node_15(3);
+    root->left = new_node_15(1);
+    root->right = new_node_15(22);
+    root->left->right = new_node_15(12);
+    root->right->left = new_node_15(2);
+    root->left->right->left = new_node_15(4);
+    root->left->right->right = new_node_15(9);
+    root->right->left->left = new_node_15(5);
 
     // (4+9+5)*3=54
     EXPECT_EQ(WPL(root), 54);
@@ -278,6 +278,45 @@ TEST(Test16, OP3) {
 
 
 /******************** 17 ********************/
+TEST(Test17, OP1) {
+    char add[] = "+";
+    char a[] = "a", b[] = "b";
+    BTree *root = new_node_17(add);
+    root->left = new_node_17(a);
+    root->right = new_node_17(b);
+
+    EXPECT_EQ(T2E(root), "a+b");
+}
+
+TEST(Test17, OP2) {
+    char add[] = "+", sub[] = "-", mul[] = "*";
+    char a[] = "a", b[] = "b", c[] = "c", d[] = "d";
+    BTree *root = new_node_17(mul);
+    root->left = new_node_17(add);
+    root->right = new_node_17(mul);
+    root->left->left = new_node_17(a);
+    root->left->right = new_node_17(b);
+    root->right->left = new_node_17(c);
+    root->right->right = new_node_17(sub);
+    root->right->right->right = new_node_17(d);
+
+    EXPECT_EQ(T2E(root), "(a+b)*(c*(-d))");
+}
+
+TEST(Test17, OP3) {
+    char add[] = "+", sub[] = "-", mul[] = "*";
+    char a[] = "a", b[] = "b", c[] = "c", d[] = "d";
+    BTree *root = new_node_17(add);
+    root->left = new_node_17(mul);
+    root->right = new_node_17(sub);
+    root->left->left = new_node_17(a);
+    root->left->right = new_node_17(b);
+    root->right->right = new_node_17(sub);
+    root->right->right->left = new_node_17(c);
+    root->right->right->right = new_node_17(d);
+
+    EXPECT_EQ(T2E(root), "(a*b)+(-(c-d))");
+}
 
 
 
