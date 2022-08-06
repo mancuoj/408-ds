@@ -254,6 +254,27 @@ TEST(Test15, OP3) {
 
 
 /******************** 16 ********************/
+TEST(Test16, BF1) {
+    int A[] = {1, 2};
+
+    // 2-1=1
+    EXPECT_EQ(partition_bf(A, 2), 1);
+}
+
+TEST(Test16, BF2) {
+    int A[] = {5, 3, 2, 4, 1};
+
+    // (4+5)-(1+2+3)=3
+    EXPECT_EQ(partition_bf(A, 5), 3);
+}
+
+TEST(Test16, BF3) {
+    int A[] = {53, 2, 9, 10, 94, 49};
+
+    // (53+49+94)-(2+9+10)=175
+    EXPECT_EQ(partition_bf(A, 6), 175);
+}
+
 TEST(Test16, OP1) {
     int A[] = {1, 2};
 

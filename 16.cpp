@@ -3,7 +3,7 @@
 /**
  * 把小值放到前半部分，大值放到后半部分，这就是快排的思想
  * 只需要枢纽元素在中间即可，无需对全部元素进行排序
- * 当然暴力可以全排序或采用其他的排序算法全排序，这里就不赘述了
+ * 当然暴力可以全排序或采用其他的排序算法全排序，放在下面了
  */
 int partition(int A[], int len) {
     int low = 0, high = len - 1, mid = (len - 1) / 2;
@@ -37,6 +37,21 @@ int partition(int A[], int len) {
             }
         }
     }
+
+    int i = 0;
+    while (i <= mid) {
+        s1 += A[i++];
+    }
+    while (i < len) {
+        s2 += A[i++];
+    }
+
+    return s2 - s1;
+}
+
+int partition_bf(int A[], int len) {
+    int mid = (len - 1) / 2, s1 = 0, s2 = 0;
+    std::sort(A, A + len);
 
     int i = 0;
     while (i <= mid) {

@@ -77,6 +77,8 @@ void delete_same_abs_value(List15 list, int len);
 
 
 /******************** 16 ********************/
+int partition_bf(int A[], int len);
+
 int partition(int A[], int len);
 
 
@@ -91,6 +93,7 @@ BTree *new_node_17(char data[]);
 std::string T2E(BTree *root);
 
 void tree_to_infix(BTree *root, int depth);
+
 
 /******************** 18 ********************/
 int find_miss_min(int A[], int len);
@@ -117,7 +120,6 @@ bool is_min_triple(int a, int b, int c);
 int find_min_distance(int A[], int B[], int C[], int lena, int lenb, int lenc);
 
 
-
 /******************** 21 ********************/
 #define MAXV 100
 
@@ -128,7 +130,6 @@ typedef struct {
 } MGraph;
 
 int is_exist_EL(MGraph G);
-
 
 
 /******************** 22 ********************/
