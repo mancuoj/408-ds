@@ -31,6 +31,7 @@ add_executable(
         19.cpp
         20.cpp
         21.cpp
+        22.cpp
 )
 
 target_link_libraries(
