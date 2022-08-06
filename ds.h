@@ -1,3 +1,6 @@
+#ifndef DS_H
+#define DS_H
+
 #include <bits/stdc++.h>
 
 typedef int ElemType;
@@ -134,3 +137,4 @@ int is_exist_EL(MGraph G);
 
 /******************** 22 ********************/
 
+#endif
