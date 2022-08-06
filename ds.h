@@ -51,7 +51,16 @@ int find_main(int A[], int len);
 
 
 /******************** 14 ********************/
+typedef struct BiNode {
+    int weight;
+    struct BiNode *left, *right;
+} BiNode, *BiTree;
 
+BiNode *new_node(int weight);
+
+int WPL(BiTree root);
+
+int pre_order_wpl(BiTree root, int depth);
 
 
 /******************** 15 ********************/

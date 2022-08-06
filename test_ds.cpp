@@ -185,6 +185,41 @@ TEST(Test13, OP3) {
 
 
 /******************** 14 ********************/
+TEST(Test14, OP1) {
+    BiNode *root = new_node(1);
+    root->left = new_node(2);
+    root->right = new_node(3);
+    root->left->left = new_node(4);
+
+    // 3+4*2=11
+    EXPECT_EQ(WPL(root), 11);
+}
+
+TEST(Test14, OP2) {
+    BiNode *root = new_node(3);
+    root->left = new_node(5);
+    root->right = new_node(8);
+    root->left->left = new_node(2);
+    root->left->right = new_node(12);
+    root->left->right->left = new_node(7);
+
+    // 8+2*2+7*3=33
+    EXPECT_EQ(WPL(root), 33);
+}
+
+TEST(Test14, OP3) {
+    BiNode *root = new_node(3);
+    root->left = new_node(1);
+    root->right = new_node(22);
+    root->left->right = new_node(12);
+    root->right->left = new_node(2);
+    root->left->right->left = new_node(4);
+    root->left->right->right = new_node(9);
+    root->right->left->left = new_node(5);
+
+    // (4+9+5)*3=54
+    EXPECT_EQ(WPL(root), 54);
+}
 
 
 
