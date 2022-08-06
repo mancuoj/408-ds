@@ -9,8 +9,7 @@
 
 ## Usage
 
-- 只推荐 CLion 打开本项目（省去配置过程）
-- 查看真题 -> 思考 -> 查看评分标准 -> 查看本题代码 -> 打开 `test_ds.cpp` 添加更多测试
+> 只推荐 CLion 打开本项目（省去配置过程），在 `test_ds.cpp` 添加更多测试：
 
 ```c++
 TEST(xx, xx) {
@@ -18,7 +17,7 @@ TEST(xx, xx) {
     ...
     
     EXPECT_EQ(add(1, 2), 3);
-    EXPECT_TRUE(is_sth_true);
+    EXPECT_TRUE(is_exist());
 }
 ```
 

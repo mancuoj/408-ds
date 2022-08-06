@@ -1,6 +1,3 @@
-#ifndef TEST_408_DS
-#define TEST_408_DS
-
 #include <bits/stdc++.h>
 
 typedef int ElemType;
@@ -120,6 +117,3 @@ int is_exist_EL(MGraph G);
 
 /******************** 22 ********************/
 
-
-
-#endif
