@@ -7,7 +7,7 @@
 日拱一卒 功不唐捐
 </p>
 
-## Features
+## 特性
 
 - 🍓 09~22年真题
 - 🍒 暴力解 + 最优解
@@ -15,7 +15,7 @@
 - 🍉 [GoogleTest](https://github.com/google/googletest) 全面测试
 - 🍇 真题题目 + 评分标准
 
-## Usage
+## 使用
 
 推荐使用 CLion 打开本项目，可在 `test_ds.cpp` 文件中添加更多测试：
 
@@ -29,7 +29,7 @@ TEST(xx, xx) {
 }
 ```
 
-## TOC
+## 目录
 
 
 |                  | 重点                   | 难度 |
