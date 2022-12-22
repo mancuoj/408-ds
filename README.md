@@ -3,9 +3,6 @@
 <img src="./images/H.png" alt="logo" height="200" width="200"/>
 </p>
 
-<p align="center">
-日拱一卒 功不唐捐
-</p>
 
 ## 特性
 
