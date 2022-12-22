@@ -1,9 +1,3 @@
-<br>
-<p align="center">
-<img src="./images/H.png" alt="logo" height="200" width="200"/>
-</p>
-
-
 ## 特性
 
 - 🍓 09~22年真题
